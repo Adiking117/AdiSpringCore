@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import com.adi.trainer.CsharpTrainer;
+import com.adi.trainer.JavaCsharpTrainer;
 import com.adi.trainer.JavaTrainer;
 import com.adi.trainer.Trainer;
 
@@ -31,6 +32,12 @@ public class TrainingConfiguration {
 	@Value("#{${ct1.subjects}}")
 	private List<String> ct1Subjects;
 	
+	@Value("${jct1.name}")
+	private String jct1Name;
+	
+	@Value("#{${jct1.subjects}}")
+	private List<String> jct1Subjects;
+	
 	@Bean
 	public Trainer javaTrainer() {
 		Trainer javaTrainer = new JavaTrainer(jt1Name,jt1Subjects);
@@ -41,5 +48,11 @@ public class TrainingConfiguration {
 	public Trainer csharpTrainer() {
 		Trainer csharpTrainer = new CsharpTrainer(ct1Name,ct1Subjects);
 		return csharpTrainer;
+	}
+	
+	@Bean
+	public JavaCsharpTrainer javaCsharpTrainer() {
+		JavaCsharpTrainer javaCsharpTrainer = new JavaCsharpTrainer(jct1Name,jct1Subjects);
+		return javaCsharpTrainer;
 	}
 }

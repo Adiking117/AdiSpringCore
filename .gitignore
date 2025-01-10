@@ -1,0 +1,34 @@
+# Ignore IDE configuration files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Ignore build directories
+/target/
+/out/
+/bin/
+
+# Ignore Maven wrapper files
+.mvn/
+mvnw
+mvnw.cmd
+
+# Ignore Gradle wrapper files
+gradle/
+gradlew
+gradlew.bat
+
+# Ignore log files
+*.log
+
+# Ignore compiled class files
+*.class
+
+# Ignore application properties
+application.properties
+
+# Ignore other common files
+*.bak
+*.tmp
