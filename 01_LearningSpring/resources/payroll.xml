@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+    <bean id="emp1" class="com.adi.employee.Employee" />
+    <!-- Employee emp1 = new Employee() -->
+    
+    <bean id="emp2" class="com.adi.employee.Employee" scope="prototype" />
+
+	<!-- Employee emp3 = new Employee("Aditya",22,"TSE",39262")-->
+    <bean id="emp3" class="com.adi.employee.Employee" >
+    	<constructor-arg index="0" value="Aditya"/>
+    	<constructor-arg index="1" value="22" />
+    	<constructor-arg index="2" value="TSE"/>
+    	<constructor-arg index="3" value="39262"/>
+    </bean>
+    
+    <!-- 
+		Employee emp4 = new Employee("Shriraj",22) 
+	    emp4.setDesignation("SSE")
+	    emp4.setSalary(100000)
+    -->
+    <bean id="emp4" class="com.adi.employee.Employee" lazy-init="true">
+    	<constructor-arg index="0" value="Shriraj"/>
+    	<constructor-arg index="1" value="22" />
+    	<property name="designation" value="SSE"/>
+    	<property name="salary" value="100000"/>
+    </bean>
+    
+    <!-- This will call construcotr of satge class which is private -->
+    <!-- <bean id="stage" class="com.adi.employee.Stage" /> -->
+    
+    <!-- This will call static method stage class which return stage object -->
+    <bean id="stage1" class="com.adi.employee.Stage" factory-method="getStage"/>
+    <bean id="stage2" class="com.adi.employee.Stage" factory-method="getStage"/>
+
+	<bean id="address1" class="com.adi.employee.Address" >
+		<property name="city" value="Sikkim"></property>
+		<property name="country" value="India"></property>
+	</bean>
+	
+	<bean id="emp5" class="com.adi.employee.Employee" >
+    	<constructor-arg index="0" value="Pranav"/>
+    	<constructor-arg index="1" value="25" />
+    	<constructor-arg index="2" value="Manager"/>
+    	<constructor-arg index="3" value="200000"/>
+    	<constructor-arg index="4" ref="address1" />
+    </bean>
+    
+    
+
+</beans>
