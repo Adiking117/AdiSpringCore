@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Component
-@RequestMapping("/hello")	
+@RequestMapping("/mvc/hello")	
 public class HelloController {
 	// http://localhost:8000/SimpleSpringMVCWeb/mvc/hello
 	@RequestMapping(method = RequestMethod.GET)
