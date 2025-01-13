@@ -32,3 +32,8 @@ application.properties
 # Ignore other common files
 *.bak
 *.tmp
+
+.settings
+
+vc9_assets
+
