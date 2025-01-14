@@ -29,7 +29,7 @@
 	
 	<servlet-mapping>
 	    <servlet-name>mvc</servlet-name>
-	    <url-pattern>/</url-pattern>
+	    <url-pattern>/mvc/*</url-pattern>
 	</servlet-mapping>
 	
 </web-app>
