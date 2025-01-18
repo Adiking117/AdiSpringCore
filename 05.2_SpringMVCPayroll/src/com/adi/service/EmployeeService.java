@@ -1,5 +1,7 @@
 package com.adi.service;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +24,10 @@ public class EmployeeService {
 	        throw new IllegalArgumentException("Invalid email address");
 	    }
 	    employeeDAO.saveEmployee(employee);
+	}
+	
+	public Collection<Employee> getAllEmployees(){
+		return employeeDAO.getAllEmployees();
 	}
 
 }

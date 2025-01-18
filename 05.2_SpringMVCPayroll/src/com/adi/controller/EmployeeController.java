@@ -1,6 +1,9 @@
 package com.adi.controller;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -22,7 +25,7 @@ import com.adi.service.EmployeeService;
 @ComponentScan(basePackages = "com.adi.*")
 public class EmployeeController {
 //	@Autowired
-//	EmployeeDAO employeeDAO;
+//	private EmployeeDAO employeeDAO;
 	
 	@Autowired
 	private EmployeeService employeeService;
@@ -31,12 +34,14 @@ public class EmployeeController {
 	public ModelAndView initializeEmployee() {
 		ModelAndView modelAndView = new ModelAndView();
 		Employee employee = new Employee();
+		// Collection<Employee> employees = employeeService.getAllEmployees();
 		
 //		employee.setId(1);
-//        employee.setName("John Doe");
-//        employee.setEmail("john.doe@example.com");
+//      employee.setName("John Doe");
+//      employee.setEmail("john.doe@example.com");
         
-		modelAndView.addObject("employee",employee);
+//		modelAndView.addObject("employees",employees);
+//		modelAndView.addObject("employee",employee);
 		modelAndView.setViewName("emp");
 		
 		return modelAndView;
